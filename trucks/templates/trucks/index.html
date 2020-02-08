@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -9,16 +9,33 @@
 
     <title>Title</title>
 </head>
-<body>
-    <div class="container-fluid">
+    <body>
+        <div class="container-fluid">
+
+        {# Верхнее меню #}
         <nav class="navbar navbar-dark " style="background-color: #0a5198;">
-            <a class="navbar-brand" href="#">
-                <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30"
+            <a class="navbar-brand" href="https://vistgroup.ru/" target="_blank">
+                <img src="https://controleng.ru/wp-content/uploads/N_vistgroup__VistGroup-400x200.jpg" width="60" height="35"
                      class="d-inline-block align-top" alt="">
                 VIST test
             </a>
         </nav>
 
+        {# Форма выбора модели #}
+        <form class="form-inline" method="GET" action=".">
+            <label class="my-1 mr-2" for="model">Модель: </label>
+
+            <select class="custom-select my-1 mr-sm-2" id="model" name="model">
+                <option selected>Все</option>
+                {% for model in models %}
+                    <option value="{{ model.id }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn btn-primary my-1">Применить</button>
+        </form>
+
+        {# Таблица с самосвалами #}
         <table class="table table-sm table-hover">
             <thead>
                 <tr>
@@ -26,7 +43,7 @@
                     <th scope="col">Модель</th>
                     <th scope="col">Макс. грузоподъемность</th>
                     <th scope="col">Текущий вес, т</th>
-                    <th scope="col">Перезгуз, %</th>
+                    <th scope="col">Перегруз, %</th>
                 </tr>
             </thead>
             <tbody>
