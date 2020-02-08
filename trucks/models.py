@@ -16,5 +16,13 @@ class Truck(models.Model):
     model = models.ForeignKey(TruckModel, on_delete=models.CASCADE)
     current_weight = models.FloatField(default=0)
 
+    @property
+    def check_overload(self):
+        if self.current_weight > self.model.weight_capacity:
+            overweight = round((self.current_weight / self.model.weight_capacity) * 100, 2)
+            return round((overweight - 100), )
+
+        return 0
+
     def __str__(self):
         return self.garage_number
