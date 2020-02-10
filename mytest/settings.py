@@ -25,7 +25,11 @@ SECRET_KEY = 'r0$bg@x$erh#jyk8zqqr5l#1agj=npwbqbz!a(0yqufc!g*scl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://snevar.pythonanywhere.com/']
+ALLOWED_HOSTS = [
+    'snevar.pythonanywhere.com/',
+    '127.0.0.1',
+
+]
 
 
 # Application definition
