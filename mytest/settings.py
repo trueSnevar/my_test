@@ -26,7 +26,7 @@ SECRET_KEY = 'r0$bg@x$erh#jyk8zqqr5l#1agj=npwbqbz!a(0yqufc!g*scl'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'snevar.pythonanywhere.com/',
+    'snevar.pythonanywhere.com',
     '127.0.0.1',
 
 ]
